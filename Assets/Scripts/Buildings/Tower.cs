@@ -10,13 +10,14 @@ public class Tower : MonoBehaviour
     public float radius = 115.0f;
     public GameObject borderPost;
 
+    private List<GameObject> borderPosts = new List<GameObject>();
     
 
     // Start is called before the first frame update
     void Start()
     {
         CalculatePositions();
-        InstantiatePoints();
+        InstantiateBorderPosts();
 
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         
@@ -25,7 +26,13 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lineRenderer.SetPositions(positions.ToArray());
+        Vector3[] _borderPostsPositions = new Vector3[borderPosts.Count];
+        int i = 0;
+        foreach(GameObject _borderPost in borderPosts)
+        {
+            _borderPostsPositions[i++] = _borderPost.transform.position;
+        }
+        lineRenderer.SetPositions(_borderPostsPositions);
         lineRenderer.positionCount = positions.Count;
         lineRenderer.loop = true;
         lineRenderer.startWidth = 1f;
@@ -50,11 +57,13 @@ public class Tower : MonoBehaviour
         }
     }
 
-    void InstantiatePoints()
+    void InstantiateBorderPosts()
     {
         foreach (Vector3 position in positions)
         {
-            Instantiate(borderPost, position, new Quaternion()).transform.parent = this.transform;
+            GameObject _borderP = Instantiate(borderPost, position, Quaternion.identity);
+            _borderP.transform.parent = this.transform;
+            borderPosts.Add(_borderP);
         }
     }
 }
