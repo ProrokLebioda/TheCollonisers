@@ -515,12 +515,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 620585064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6c77444f086964bbd89ba50a57defd, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f83dcd25c88f9458eb81f9f00d3094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1808506188}
-  movementSpeed: 20
-  movementTime: 1
+  movementSpeed: 30
+  movementTime: 2
   zoomAmount: {x: 0, y: -10, z: 10}
 --- !u!1001 &692138871
 PrefabInstance:
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 766021746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32edb281e1988ee48b3428ee2c97867d, type: 3}
+  m_Script: {fileID: 11500000, guid: be7ee8aed6053b54ca7df961fb9cdf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1040011679
