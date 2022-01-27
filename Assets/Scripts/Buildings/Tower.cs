@@ -53,7 +53,7 @@ public class Tower : MonoBehaviour
             float y = this.transform.position.y;
             float z = Mathf.Sin(radians) * radius + this.transform.position.z;
             positions.Add(new Vector3(x, y, z));
-            Debug.Log("Point no:" + i + " ;X: " + x + " ;Y: " + y + " ;Z: " + z);
+            //Debug.Log("Point no:" + i + " ;X: " + x + " ;Y: " + y + " ;Z: " + z);
         }
     }
 
